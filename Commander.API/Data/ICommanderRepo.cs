@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Commander.API.Models;
 
 namespace Commander.API.Data
@@ -11,7 +8,6 @@ namespace Commander.API.Data
         IEnumerable<Command> GetAllCommands();
 
         Command GetCommandById(int id);
-
 
     }
 }
