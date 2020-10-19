@@ -13,5 +13,7 @@ namespace Commander.API.Data
 
         void CreateCommand(Command command);
 
+        void UpdateCommand(Command command);
+
     }
 }

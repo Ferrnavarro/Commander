@@ -2,7 +2,7 @@
 
 namespace Commander.API.Dtos
 {
-    public class CommandCreateDto
+    public class CommandUpdateDto
     {
         [Required]
         [MaxLength(250)]

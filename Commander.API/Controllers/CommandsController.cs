@@ -58,5 +58,23 @@ namespace Commander.API.Controllers
             return BadRequest(ModelState);
         }
 
+        [HttpPut("{id}")]
+        public ActionResult UpdateCommand(int id, CommandUpdateDto commandUpdateDto)
+        {
+            var commandFromRepo = _repository.GetCommandById(id);
+
+            if (commandFromRepo == null)
+                return NotFound();
+
+            _mapper.Map(commandUpdateDto, commandFromRepo);
+
+            _repository.UpdateCommand(commandFromRepo);
+
+            _repository.SaveChanges();
+
+            return NoContent();
+
+        }
+
     }
 }
