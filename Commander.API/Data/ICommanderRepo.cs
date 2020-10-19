@@ -15,5 +15,7 @@ namespace Commander.API.Data
 
         void UpdateCommand(Command command);
 
+        void DeleteCommand(Command command);
+
     }
 }

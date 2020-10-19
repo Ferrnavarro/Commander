@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Commander.API.Models;
+using Microsoft.AspNetCore.Server.IIS.Core;
 
 namespace Commander.API.Data
 {
@@ -26,6 +28,16 @@ namespace Commander.API.Data
             _context.Commands.Add(command);
         }
 
+        public void DeleteCommand(Command command)
+        {
+            if (command == null)
+            {
+                throw new ArgumentNullException(nameof(command));
+            }
+
+            _context.Commands.Remove(command);
+        }
+
         public IEnumerable<Command> GetAllCommands()
         {
             var commands = _context.Commands.ToList();
@@ -45,7 +57,7 @@ namespace Commander.API.Data
 
         public void UpdateCommand(Command command)
         {
-            
+          
         }
     }
 }
